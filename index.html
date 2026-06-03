@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Room AI Agent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="room-panel" aria-label="Escape room">
+        <div class="status-bar">
+          <div>
+            <p class="eyebrow">AI Escape Room</p>
+            <h1>The Locked Lab</h1>
+          </div>
+          <div class="timer" id="timer">15:00</div>
+        </div>
+
+        <div class="room-scene">
+          <button class="hotspot door" data-object="door" aria-label="Inspect door"></button>
+          <button class="hotspot poster" data-object="poster" aria-label="Inspect poster"></button>
+          <button class="hotspot desk" data-object="desk" aria-label="Inspect desk"></button>
+          <button class="hotspot laptop" data-object="laptop" aria-label="Inspect laptop"></button>
+          <button class="hotspot safe" data-object="safe" aria-label="Inspect safe"></button>
+          <button class="hotspot bookshelf" data-object="bookshelf" aria-label="Inspect bookshelf"></button>
+          <div class="label label-door">Exit</div>
+          <div class="label label-poster">Poster</div>
+          <div class="label label-desk">Desk</div>
+          <div class="label label-safe">Safe</div>
+          <div class="label label-laptop">Laptop</div>
+          <div class="label label-bookshelf">Bookshelf</div>
+        </div>
+
+        <div class="inventory-panel">
+          <h2>Inventory</h2>
+          <div id="inventory" class="inventory-list"></div>
+        </div>
+      </section>
+
+      <section class="agent-panel" aria-label="AI agent chat">
+        <div class="agent-header">
+          <div>
+            <p class="eyebrow">Game Master Agent</p>
+            <h2>Ask, inspect, solve</h2>
+          </div>
+          <button id="resetButton" class="secondary-button">Reset</button>
+        </div>
+
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+
+        <form id="commandForm" class="command-form">
+          <input
+            id="commandInput"
+            type="text"
+            autocomplete="off"
+            placeholder="Try: inspect desk, use key, code 3142, hint"
+            aria-label="Command"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
